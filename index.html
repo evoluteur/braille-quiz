@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braille Quiz</title>
+  <meta name="description" content="Learn to read Braille: guess words letter group by letter group, with and without a cheat sheet, against the clock." />
+  <link rel="stylesheet" href="css/braille-quiz.css" />
+  <script>
+    // apply the saved theme before first paint (same key as other projects)
+    try {
+      var t = localStorage.getItem("omg-theme");
+      if (t === "light" || t === "dark" || t === "evol-blue") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="theme-picker" role="group" aria-label="Theme"></div>
+  <main class="app">
+
+    <!-- Home: level picker -->
+    <section id="home" class="screen active">
+      <header class="hero">
+        <h1>Braille Quiz</h1>
+        <p class="lede">Braille is learned in three rows. Learn <b>a – j</b> first. <b>k – t</b> are the same shapes with
+          <span class="hl">dot 3</span> added. <b>u – z</b> add <span class="hl">dots 3 &amp; 6</span>
+          (except <b>w</b>, which is j + dot 6).</p>
+      </header>
+
+      <div id="levels" class="levels"></div>
+
+      <details class="alphabet">
+        <summary>The Braille alphabet</summary>
+        <div id="alphabet"></div>
+      </details>
+
+      <footer class="related">
+        <span>Related projects:</span>
+        <a href="https://evoluteur.github.io/braille-tools/index.html" target="_blank" rel="noopener">Braille-Tools</a>
+        <span class="sep">·</span>
+        <a href="https://evoluteur.github.io/braille-text/index.html" target="_blank" rel="noopener">Braille-Text</a>
+      </footer>
+      <p class="copyright">(c) 2026 <a href="https://evoluteur.github.io/" target="_blank" rel="noopener">Olivier Giulieri</a></p>
+    </section>
+
+    <!-- Level 0: your name in Braille -->
+    <section id="name" class="screen">
+      <div class="topbar">
+        <button class="btn ghost back" title="Back to levels (Esc)">← Levels</button>
+        <div class="level-name">Level 0 · Your name in Braille</div>
+        <div></div>
+      </div>
+      <form class="guess name-form" autocomplete="off" onsubmit="return false">
+        <input id="name-input" type="text" spellcheck="false" autocapitalize="off" autocorrect="off"
+          maxlength="40" placeholder="Type your name…" aria-label="Your name" />
+      </form>
+      <div class="board name-board">
+        <div id="name-braille" class="name-braille"></div>
+      </div>
+      <p class="muted center" id="name-hint">Each letter is a cell of 6 dots: 1-2-3 down the left, 4-5-6 down the right.</p>
+      <div class="actions">
+        <button id="name-start" class="btn primary">Start level 1 →</button>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="game" class="screen">
+      <div class="topbar">
+        <button id="quit" class="btn ghost" title="Back to levels (Esc)">← Levels</button>
+        <div class="level-name" id="g-level"></div>
+        <div class="stats">
+          <span id="g-progress"></span>
+          <span id="g-mistakes" title="Wrong guesses"></span>
+        </div>
+      </div>
+
+      <div class="timer" id="timer">0.0s</div>
+      <div class="word-timer" id="word-timer"></div>
+
+      <div class="board">
+        <div id="word" class="word" aria-label="Braille word"></div>
+        <div id="answer" class="answer" aria-live="polite"></div>
+      </div>
+
+      <form id="guess-form" class="guess" autocomplete="off">
+        <input id="guess" type="text" spellcheck="false" autocapitalize="off" autocorrect="off"
+          placeholder="Type the word…" aria-label="Your guess" />
+      </form>
+
+      <div class="actions">
+        <button id="peek" class="btn ghost" type="button">Peek at cheat sheet (+5s)</button>
+        <button id="skip" class="btn ghost" type="button">Skip (+10s)</button>
+      </div>
+
+      <div id="cheat" class="cheat"></div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="screen">
+      <h2 id="r-title">Round complete</h2>
+      <div class="r-score">
+        <div class="big" id="r-score"></div>
+        <div class="muted" id="r-best"></div>
+      </div>
+      <div class="r-grid" id="r-grid"></div>
+      <ol class="r-words" id="r-words"></ol>
+      <div class="actions">
+        <button id="r-retry" class="btn">Play again</button>
+        <button id="r-next" class="btn primary">Next level →</button>
+        <button id="r-home" class="btn ghost">Levels</button>
+      </div>
+    </section>
+
+  </main>
+  <script src="js/words.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/braille-quiz.js"></script>
+</body>
+</html>
