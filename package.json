@@ -1,0 +1,28 @@
+{
+  "name": "braille-quiz",
+  "version": "1.0.0",
+  "description": "Learn to read Braille: guess words letter group by letter group (a-j, a-t, a-z), with and without a cheat sheet, against the clock.",
+  "copyright": "(c) 2026 Olivier Giulieri",
+  "license": "MIT",
+  "homepage": "https://evoluteur.github.io/braille-quiz/",
+  "author": "Olivier Giulieri (https://evoluteur.github.io/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evoluteur/braille-quiz.git"
+  },
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "braille",
+    "alphabet",
+    "quiz",
+    "game",
+    "css",
+    "javascript",
+    "html",
+    "education",
+    "learning",
+    "grade1"
+  ]
+}

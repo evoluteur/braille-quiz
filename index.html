@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-063933E3C2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-063933E3C2");
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Braille Quiz</title>
-  <meta name="description" content="Learn to read Braille: guess words letter group by letter group, with and without a cheat sheet, against the clock." />
+  <title>Braille Quiz: Learn to Read the Braille Alphabet, a Game with Timer</title>
+  <link rel="canonical" href="https://evoluteur.github.io/braille-quiz/" />
+  <meta name="description" content="Free game to learn to read Braille. Start with letters a to j, then k to t (add dot 3), then u to z (add dots 3 and 6). Guess words with or without a cheat sheet, against the clock." />
+  <meta name="keywords" content="braille, learn braille, braille alphabet, braille quiz, braille game, braille practice, read braille, grade 1, english braille, braille for sighted people" />
+  <meta name="author" content="Olivier Giulieri" />
+  <meta name="theme-color" content="#f4efe5" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Braille Quiz" />
+  <meta property="og:url" content="https://evoluteur.github.io/braille-quiz/" />
+  <meta property="og:title" content="Braille Quiz: Learn to Read the Braille Alphabet, a Game with Timer" />
+  <meta property="og:description" content="Free game to learn to read Braille. Start with letters a to j, then k to t (add dot 3), then u to z (add dots 3 and 6). Guess words with or without a cheat sheet, against the clock." />
+  <meta property="og:image" content="https://evoluteur.github.io/braille-quiz/img/braille-quiz.png" />
+  <meta property="og:image:alt" content="Braille Quiz: a word written in Braille cells with a timer" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Braille Quiz: Learn to Read the Braille Alphabet, a Game with Timer" />
+  <meta name="twitter:description" content="Free game to learn to read Braille. Start with letters a to j, then k to t (add dot 3), then u to z (add dots 3 and 6). Guess words with or without a cheat sheet, against the clock." />
+  <meta name="twitter:image" content="https://evoluteur.github.io/braille-quiz/img/braille-quiz.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Braille Quiz",
+      "description": "Free game to learn to read Braille. Start with letters a to j, then k to t (add dot 3), then u to z (add dots 3 and 6). Guess words with or without a cheat sheet, against the clock.",
+      "url": "https://evoluteur.github.io/braille-quiz/",
+      "image": "https://evoluteur.github.io/braille-quiz/img/braille-quiz.png",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "license": "https://opensource.org/licenses/MIT",
+      "codeRepository": "https://github.com/evoluteur/braille-quiz",
+      "author": {
+        "@type": "Person",
+        "name": "Olivier Giulieri",
+        "url": "https://evoluteur.github.io/"
+      }
+    }
+  </script>
+  <link rel="icon" type="image/gif" href="br.gif" />
   <link rel="stylesheet" href="css/braille-quiz.css" />
   <script>
     // apply the saved theme before first paint (same key as other projects)
@@ -33,6 +84,24 @@
         <summary>The Braille alphabet</summary>
         <div id="alphabet"></div>
       </details>
+
+      <section class="about">
+        <h2>How to learn the Braille alphabet</h2>
+        <p>Each Braille letter is a cell of up to six raised dots, numbered 1-2-3 down the left column and 4-5-6 down the right.
+          The English Braille alphabet (Grade 1) is built in three rows of ten, so you only need to memorize ten shapes:</p>
+        <ul>
+          <li><b>a to j</b> use only the top four dots (1, 2, 4, 5). Learn these first.</li>
+          <li><b>k to t</b> are the same shapes as a to j with <b>dot 3</b> added: k is a + dot 3, l is b + dot 3, and so on.</li>
+          <li><b>u to z</b> are a to e with <b>dots 3 and 6</b> added: u is a + dots 3 &amp; 6, v is b, x is c, y is d, z is e.
+            <b>w</b> is the exception (j + dot 6) because it was not used in French, where Braille was invented by Louis Braille.</li>
+        </ul>
+        <h2>How the quiz works</h2>
+        <p>Level 0 shows your name in Braille. Then each level shows 10 words written in Braille, and you type each word to move on.
+          Levels 1 and 2 only use the letters a to j, levels 3 and 4 add k to t, and levels 5 and 6 use the whole alphabet.
+          Odd levels have a cheat sheet, even levels don't. A timer measures how long you take, skipping a word adds 10 seconds,
+          and your best time for each level is saved in your browser. Braille Quiz is free, works on phones and computers,
+          and is meant for sighted people curious about Braille.</p>
+      </section>
 
       <footer class="related">
         <span>Related projects:</span>

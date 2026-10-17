@@ -2,11 +2,17 @@
 
 A small game to learn to read Braille (English Grade 1), one row of the alphabet at a time, against the clock.
 
+Check out the [live demo](https://evoluteur.github.io/braille-quiz/index.html).
+
+![Braille Quiz](img/braille-quiz.png)
+
 Braille letters are learned in three rows:
 
 - **a – j** — the 10 base shapes, using only the top 4 dots.
 - **k – t** — the same shapes as a – j, plus **dot 3**.
 - **u – z** — the same shapes as a – e, plus **dots 3 & 6**. The exception is **w** (j + dot 6), added to Braille later.
+
+![Braille alphabet](img/braille-alphabet.png)
 
 ## Levels
 
@@ -38,6 +44,7 @@ npx serve .
 - `css/braille-quiz.css` — styles (light & dark)
 - `js/braille-quiz.js` — game logic and Braille rendering
 - `js/words.js` — word bank (add words freely; each level filters by letters)
+- `js/theme.js` — theme picker (light, dark, evol-blue)
 
 ## Related projects
 
