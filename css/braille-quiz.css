@@ -69,9 +69,16 @@
 
 /* Theme picker (top right, same as other projects) */
 #theme-picker {
-  position: fixed; top: 8px; right: 8px; z-index: 200;
+  position: fixed; top: 8px; right: 52px; z-index: 200;
   display: inline-flex; align-items: center; gap: 2px;
 }
+#gh-link {
+  position: fixed; top: 8px; right: 8px; z-index: 200;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  color: var(--ink); opacity: .55; text-decoration: none;
+}
+#gh-link:hover, #gh-link:focus-visible { opacity: 1; }
 #theme-picker button {
   display: inline-flex; align-items: center; justify-content: center;
   width: 30px; height: 30px; padding: 0;
